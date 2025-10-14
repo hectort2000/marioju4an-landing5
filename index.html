@@ -255,10 +255,10 @@ src="https://www.facebook.com/tr?id=2021841308662371&ev=PageView&noscript=1"
       // ROTACIÓN ALEATORIA SIN REPETICIONES de WhatsApp
       (function () {
         const numerosWhatsapp = [
-          "5491135028564",
-          "5491162493561",
-          "5493413720168",
-          "5493413768705"
+          "5491168544052",
+          "5491134963688",
+          "5491168545770",
+          "5491160424433"
         ];
         const mensaje =
           "Hola, quisiera un usuario y quiero cargar para tener mi bono de BIENVENIDA SOLO POR HOY";
@@ -298,7 +298,7 @@ src="https://www.facebook.com/tr?id=2021841308662371&ev=PageView&noscript=1"
           .addEventListener("click", function () {
             if (index >= sequence.length) initSequence();
             const numero = sequence[index];
-            this.href = https://wa.me/${numero}?text=${encodeURIComponent(mensaje)};
+            this.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
             localStorage.setItem("wa_last", numero);
             index++;
             localStorage.setItem("wa_seq_index", index);
