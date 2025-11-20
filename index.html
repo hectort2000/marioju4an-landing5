@@ -293,16 +293,22 @@ src="https://www.facebook.com/tr?id=2021841308662371&ev=PageView&noscript=1"
         let index = parseInt(localStorage.getItem("wa_seq_index"), 10) || 0;
         if (!sequence.length) initSequence();
 
-        document
-          .getElementById("whatsapp-btn")
-          .addEventListener("click", function () {
-            if (index >= sequence.length) initSequence();
-            const numero = sequence[index];
-            this.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-            localStorage.setItem("wa_last", numero);
-            index++;
-            localStorage.setItem("wa_seq_index", index);
-          });
+       document
+  .getElementById("whatsapp-btn")
+  .addEventListener("click", function () {
+    if (index >= sequence.length) initSequence();
+    const numero = sequence[index];
+    this.href = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    localStorage.setItem("wa_last", numero);
+    index++;
+    localStorage.setItem("wa_seq_index", index);
+
+    // Disparar evento Contact al hacer clic en el botón
+    if (typeof fbq === "function") {
+      fbq("track", "Contact");
+    }
+  });
+
       })();
     </script>
   </body>
